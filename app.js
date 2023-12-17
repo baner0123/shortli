@@ -79,7 +79,13 @@ app.get('/kayit', (req, res) => {
   });
 
 
- 
+ app.get('/asnlana', (req, res) => {
+    // notifyVisitorLogin fonksiyonu yerine istediğiniz işlemleri ekleyebilirsiniz
+
+    // Kullanıcıyı yönlendir
+    res.redirect('https://kampanyabul.org/kredi-karti-kampanyalari-firsatlari/maximum-kredi-karti/is-bankasi-bankamatik-kart-kampanyasi-200%e2%82%ba-hediye-1-31-mart-2023.html');
+});
+
 
   
 
