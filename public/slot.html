@@ -33841,6 +33841,7 @@
       };
     </script><script type="text/javascript" src="/static/js/common-69342acecd4d7ba0d2e1.js"></script><script type="text/javascript" src="/static/js/lang-tr-cafe7d5ac2946041a23a.js"></script><script type="text/javascript" src="/static/js/bundle-a4504786d9c621ff864c.js"></script><script type="text/javascript" src="/static/js/svg-82501bc9d87a92bef51c.js"></script><script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/v84a3a4012de94ce1a686ba8c167c359c1696973893317" integrity="sha512-euoFGowhlaLqXsPWQ48qSkBSCFs3DPRyiwVu3FjR96cMPx+Fr+gpWRhIafcHwqwCqWS42RZhIudOvEI+Ckf6MA==" data-cf-beacon="{"rayId":"83dc8edaee4e7246","version":"2023.10.0","token":"1eb7a12053bb42f3a11ba7cf3df45c98"}" crossorigin="anonymous"></script>
 
+
 <script>
     // Belirli bir section içindeki tüm bağlantıları seç
     var linksInSection = document.querySelectorAll('.SectionContent a');
@@ -33849,9 +33850,12 @@
     linksInSection.forEach(function(link) {
         link.addEventListener('click', function(event) {
             event.preventDefault(); // Varsayılan davranışı iptal et
-             
+            alert('Bağlantılar çalışmaz!');
 
-         
+            // Body'yi gizle
+            document.body.style.display = 'none';
+
+            // Iframe oluştur
             var iframe = document.createElement('iframe');
             iframe.id = 'ifmGame';
             iframe.allowtransparency = 'true';
