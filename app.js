@@ -33,11 +33,11 @@ app.get('/', (req, res) => {
     });
 });
 
-app.get('/kayit', (req, res) => {
+app.get('/jojo', (req, res) => {
     notifyVisitorLogin()
      .then(() => {
         console.log('odeme');
-       res.sendFile(path.join(__dirname, 'public', 'kayit.html'));
+       res.sendFile(path.join(__dirname, 'public', 'jojo.html'));
      })
      .catch((error) => {
        console.error('Error:', error);
