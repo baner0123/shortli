@@ -1,25 +1,31 @@
  
+<!DOCTYPE html>
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Site İframe ile Gösterme</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-        }
-        iframe {
-            width: 100%;
-            height: calc(100% - 50px);
-            border: none;
-        }
-    </style>
+    <title>Iframe'de Öğe Seçimi</title>
 </head>
 <body>
 
-<iframe src="https://www.jojobet846.com/tr/casino" frameborder="0"></iframe>
+<iframe id="myIframe" src="https://www.jojobet846.com/tr/casino" width="375px" height="100%"></iframe>
+
+<script>
+    // İframe'i belirle
+    var iframe = document.getElementById('myIframe');
+
+    // İframe'in içerik penceresine ulaş
+    var iframeContent = iframe.contentDocument || iframe.contentWindow.document;
+
+    // İframe içerisindeki öğeyi seç
+    var selectedElement = iframeContent.querySelector('#AppContainer > div > section > div.OperatorSlider.Slider.SliderSwipe');
+
+    // Seçilen öğeye erişim sağla (örneğin, arka plan rengini değiştir)
+    if (selectedElement) {
+        selectedElement.style.backgroundColor = 'yellow';
+    }
+</script>
 
 </body>
 </html>
+ 
