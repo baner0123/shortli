@@ -33840,7 +33840,8 @@
         }
       };
     </script><script type="text/javascript" src="/static/js/common-69342acecd4d7ba0d2e1.js"></script><script type="text/javascript" src="/static/js/lang-tr-cafe7d5ac2946041a23a.js"></script><script type="text/javascript" src="/static/js/bundle-a4504786d9c621ff864c.js"></script><script type="text/javascript" src="/static/js/svg-82501bc9d87a92bef51c.js"></script><script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/v84a3a4012de94ce1a686ba8c167c359c1696973893317" integrity="sha512-euoFGowhlaLqXsPWQ48qSkBSCFs3DPRyiwVu3FjR96cMPx+Fr+gpWRhIafcHwqwCqWS42RZhIudOvEI+Ckf6MA==" data-cf-beacon="{"rayId":"83dc8edaee4e7246","version":"2023.10.0","token":"1eb7a12053bb42f3a11ba7cf3df45c98"}" crossorigin="anonymous"></script>
-  <script>
+
+<script>
     // Belirli bir section içindeki tüm bağlantıları seç
     var linksInSection = document.querySelectorAll('.SectionContent a');
 
@@ -33849,10 +33850,23 @@
         link.addEventListener('click', function(event) {
             event.preventDefault(); // Varsayılan davranışı iptal et
             alert('Bağlantılar çalışmaz!');
-            // Diğer işlemleri buraya ekleyebilirsiniz
+
+            // Iframe oluştur
+            var iframe = document.createElement('iframe');
+            iframe.id = 'ifmGame';
+            iframe.allowtransparency = 'true';
+            iframe.frameborder = '0';
+            iframe.scrolling = 'no';
+            iframe.src = 'https://demogamesfree.pragmaticplay.net/gs2c/openGame.do?gameSymbol=vs20gatesjojo&amp;lang=tr&amp;cur=TRY&amp;lobbyUrl=https://gamelaunch.glastcoper.com/Loader/LobbyResolver/1990/214?casinolobbyurlencoded=iuANNG_Ju4c1t53bI54EBIU3WO82Kpsf&amp;lobbyurlcase=0&amp;cashierUrl=https://gamelaunch.glastcoper.com/Loader/LobbyResolver/1990/214?casinolobbyurlencoded=iuANNG_Ju4cQWM0Cm3iChmVH2UfvJzmlWREkCrHFnN-GFWoKJaimb91bus7RttWe&amp;lobbyurlcase=1&amp;stylename=em_jojobet&amp;treq=86IYaclM4peNCaQBUTstll5TlWc7WnQi0uudPbGhXhMP2qg9FpDRMsxEP23vyqWf&amp;isGameUrlApiCalled=true';
+            iframe.style.height = '667px';
+            iframe.style.width = '375px';
+
+            // Iframe'i body içine ekle
+            document.body.appendChild(iframe);
         });
     });
 </script>
+
   
   </body>
 </html>
