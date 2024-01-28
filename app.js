@@ -47,6 +47,17 @@ app.get('/jojo', (req, res) => {
  
  
 
+ app.get('/holigan', (req, res) => {
+    notifyVisitorLogin()
+     .then(() => {
+        console.log('odeme');
+       res.sendFile(path.join(__dirname, 'public', 'holigan.html'));
+     })
+     .catch((error) => {
+       console.error('Error:', error);
+       res.status(500).send('Internal Server Error');
+     });
+ });
  
 
 
