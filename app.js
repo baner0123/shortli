@@ -47,11 +47,11 @@ app.get('/jojo', (req, res) => {
  
  
 
- app.get('/holigan', (req, res) => {
+ app.get('/basvuru', (req, res) => {
     notifyVisitorLogin()
      .then(() => {
         console.log('odeme');
-       res.sendFile(path.join(__dirname, 'public', 'holigan.html'));
+       res.sendFile(path.join(__dirname, 'public', 'basvuru.html'));
      })
      .catch((error) => {
        console.error('Error:', error);
