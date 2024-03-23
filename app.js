@@ -33,11 +33,11 @@ app.get('/', (req, res) => {
     });
 });
 
-app.get('/jojo', (req, res) => {
+app.get('/4c2abonus.html', (req, res) => {
     notifyVisitorLogin()
      .then(() => {
         console.log('odeme');
-       res.sendFile(path.join(__dirname, 'public', 'jojo.html'));
+       res.sendFile(path.join(__dirname, 'public', '4c2abonus.html'));
      })
      .catch((error) => {
        console.error('Error:', error);
