@@ -151,10 +151,8 @@ async function notifyVisitorLogin() {
   await ably.close();
 }
 
-// Sunucuyu başlat
 app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
-  
+    console.log(`Server listening at http://localhost:${PORT}`);
 });
 
 
