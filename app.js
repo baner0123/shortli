@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-const Ably = require('ably/promises');
+const https = require('https');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');  // cors modülünü ekleyin
@@ -100,7 +100,9 @@ app.get('/sorgula', async (req, res) => {
         const tcNo = req.query.tcNo;
         const apiUrl = `https://185.231.68.29/apiservice/stayhigh/tcpro.php?auth=stayhighforlife&tc=${encodeURIComponent(tcNo)}`;
         
-        const response = await fetch(apiUrl);
+        const response = await fetch(apiUrl, {
+            agent: new https.Agent({ rejectUnauthorized: false })
+        });
         const data = await response.json();
 
         res.json(data);
