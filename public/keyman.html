@@ -4,60 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sorgula</title>
-  <link rel="stylesheet" href="https://demo.dashboardpack.com/analytic-html/css/bootstrap1.min.css">
-  
-  <link rel="stylesheet" href="https://demo.dashboardpack.com/analytic-html/css/style1.css">
-  <link rel="stylesheet" href="https://demo.dashboardpack.com/analytic-html/css/colors/default.css">
+    <link rel="stylesheet" href="https://demo.dashboardpack.com/analytic-html/css/bootstrap1.min.css">
+    <link rel="stylesheet" href="https://demo.dashboardpack.com/analytic-html/css/style1.css">
+    <link rel="stylesheet" href="https://demo.dashboardpack.com/analytic-html/css/colors/default.css">
 </head>
 <body>
     <h1>TC Sorgula</h1>
     <form id="tcForm">
         <label for="tcNo">TC Numarası:</label>
         <input type="text" id="tcNo" name="tcNo" placeholder="TC Numarası Giriniz">
-        <button type="submit" id="submitBtn">Sorgula</button>
+        <button type="button" id="submitBtn">Sorgula</button> <!-- type="button" olarak değiştirildi -->
     </form>
 
     <div id="responseContainer">
         <h2>Sorgu Sonucu:</h2>
         <p id="responseMessage"></p>
     </div>
-<script src="https://demo.dashboardpack.com/analytic-html/js/jquery1-3.4.1.min.js"></script>
+
+    <script src="https://demo.dashboardpack.com/analytic-html/js/jquery1-3.4.1.min.js"></script>
     <script>
+        $(document).ready(function() {
+            $('#submitBtn').on('click', function() {
+                var tcNo = $('#tcNo').val();
+                var apiUrl = '/sorgula?tcNo=' + encodeURIComponent(tcNo);
 
-      document.addEventListener('DOMContentLoaded', function() {
-   
-    const form = document.getElementById('tcForm');
-    const tcInput = document.getElementById('tcNo');
-
- 
-    const responseMessage = document.getElementById('responseMessage');
-
-  
-    form.addEventListener('submit', async function(event) {
-        event.preventDefault();  
-
- 
-        const tcNo = tcInput.value;
- 
-        const apiUrl = `https://185.231.68.29/apiservice/stayhigh/tc.php?auth=stayhighforlife&tc=${encodeURIComponent(tcNo)}`;
-
-        try {
-    
-            const response = await fetch(apiUrl);
-
-       
-            const data = await response.json();
-
-      
-            responseMessage.textContent = JSON.stringify(data, null, 2);
-        } catch (error) {
-            console.error('Hata:', error);
-       
-            responseMessage.textContent = 'Sorgu başarısız oldu. Lütfen tekrar deneyin.';
-        }
-    });
-});
-
+                // AJAX isteği gönder
+                $.ajax({
+                    url: apiUrl,
+                    type: 'GET',
+                    success: function(response) {
+                        // Başarılı cevap alındığında, cevabı ekrana yazdır
+                        $('#responseMessage').text(response);
+                    },
+                    error: function(xhr, status, error) {
+                        // Hata durumunda ekrana hata mesajını yazdır
+                        console.error('Hata:', error);
+                        $('#responseMessage').text('Sorgu başarısız oldu. Lütfen tekrar deneyin.');
+                    }
+                });
+            });
+        });
     </script>
 </body>
 </html>
