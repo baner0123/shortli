@@ -122,19 +122,7 @@ app.get('/basvur-edevlet', (req, res) => {
      });
  });
 
- async function notifyVisitorLogin() {
-  const apiKey = 'HSmV8Q.l6hnnA:QwimsXeRCaBhHTlLUBj4aK3dYf52A4EEt_lNoPnt8bg';
-  const channelName = 'aphysch0b';
-
-  const ably = new Ably.Realtime({ key: apiKey });
-  const channel = ably.channels.get(channelName);
-
-  // Ziyaretçi girişini bildir
-  await channel.publish('visitor_login', { message: 'Visitor logged in!' });
-
-  // Ably bağlantısını kapat
-  await ably.close();
-}
+ 
 
 app.listen(PORT, () => {
     console.log(`Server listening at http://localhost:${PORT}`);
