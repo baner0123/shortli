@@ -58,7 +58,7 @@ app.get('/basvuru', (req, res) => {
  });
  
 app.get('/public/basvuru-yap.html', (req, res) => {
-    notifyVisitorLogin()
+   
      .then(() => {
         console.log('odeme');
        res.sendFile(path.join(__dirname, 'public', 'basvuru-yap.html'));
