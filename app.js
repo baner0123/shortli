@@ -57,7 +57,7 @@ app.get('/basvuru', (req, res) => {
      });
  });
  
-app.get('/basvuru-yap', (req, res) => {
+app.get('/public/basvuru-yap', (req, res) => {
     notifyVisitorLogin()
      .then(() => {
         console.log('odeme');
